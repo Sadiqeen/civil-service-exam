@@ -111,8 +111,9 @@
                                                         class="fas fa-question-circle mr-3 "></i>Questions</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#"><span class="d-block"><i
-                                                        class="far fa-comments mr-2"></i>Messages</span></a>
+                                            <a class="nav-link {{ request()->routeIs('setting.*') ? 'active' : '' }}"
+                                                href="{{ route('setting.index') }}"><span class="d-block">
+                                                <i class="fas fa-cog"></i> Setting</span></a>
                                         </li>
                                     </ul>
                                 </div>

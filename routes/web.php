@@ -19,6 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/post-to-social/{token}', 'SocialPostController@post');
+
 Route::resource('dashboard', 'DashboardController');
 Route::resource('subject', 'SubjectController');
 Route::resource('question', 'QuestionController');
+// Setting
+Route::get('setting', 'SettingController@index')->name('setting.index');
+Route::post('setting', 'SettingController@update')->name('setting.update');
