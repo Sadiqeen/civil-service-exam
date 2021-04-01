@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/post-to-social/{token}', 'SocialPostController@post');
+Route::get('/comment-to-post/{token}', 'SocialPostController@comment');
 
 Route::resource('dashboard', 'DashboardController');
 Route::resource('subject', 'SubjectController');
