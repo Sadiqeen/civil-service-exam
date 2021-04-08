@@ -3,7 +3,7 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-light">
-        <li class="breadcrumb-item"><a href="{{ route('setting.index') }}">หน้าแรก</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">หน้าแรก</a></li>
     </ol>
 </nav>
 

@@ -23,7 +23,7 @@ Route::get('/post-to-social/{token}', 'SocialPostController@post');
 Route::get('/comment-to-post/{token}', 'SocialPostController@comment');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('dashboard', 'DashboardController');
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
     Route::resource('subject', 'SubjectController')->except([
         'show'

@@ -93,8 +93,8 @@
                                 <div class="nav-wrapper position-relative">
                                     <ul class="nav nav-pills square nav-fill flex-column vertical-tab">
                                         <li class="nav-item">
-                                            <a class="nav-link {{ request()->routeIs('dashboard.*') ? 'active' : '' }}"
-                                                href="{{ route('dashboard.index') }}">
+                                            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
+                                                href="{{ route('dashboard') }}">
                                                 <span class="d-block"><i
                                                         class="fas fa-tachometer-alt mr-3"></i>หน้าแรก</span></a>
                                         </li>
