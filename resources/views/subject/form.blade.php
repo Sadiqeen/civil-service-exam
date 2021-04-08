@@ -16,22 +16,3 @@ $name = $subject->name;
     </span>
     @enderror
 </div>
-
-@php
-$year = '';
-if (old('year')) {
-$year = old('year');
-} elseif (isset($subject)) {
-$year = $subject->year;
-}
-@endphp
-<div class="form-group">
-    <label for="">ปี</label>
-    <input type="text" class="form-control @error('year') is-invalid @enderror" value="{{ $year ?? '' }}" name="year"
-        id="year" placeholder="">
-    @error('year')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-    @enderror
-</div>

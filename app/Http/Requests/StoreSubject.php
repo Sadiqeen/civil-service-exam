@@ -25,7 +25,6 @@ class StoreSubject extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'year' => 'required|numeric',
         ];
     }
 }
