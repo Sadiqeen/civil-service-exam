@@ -29,7 +29,7 @@
     <div class="col-md-4 text-center">
         <div class="icon-box mb-4">
             <div class="icon icon-primary mb-4">
-                <span class="fas fa-question-circle"></span>
+                <span class="fas fa-paste"></span>
             </div>
             <h3 class="h5 icon-box-title">จำนวนการโพส</h3>
             <span class="counter display-3 text-gray d-block">{{$log_post}}</span>
