@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="card">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-light">
+            <li class="breadcrumb-item"><a href="{{ route('setting.index') }}">ตั้งค่า</a></li>
+        </ol>
+    </nav>
+
     <div class="card-body">
         <h1>ตั้งค่า</h1>
         <form action="{{ route('setting.update') }}" method="post">

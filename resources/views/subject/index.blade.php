@@ -3,7 +3,7 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
+    <ol class="breadcrumb breadcrumb-light">
         <li class="breadcrumb-item"><a href="{{ route('subject.index') }}">รายวิชา</a></li>
     </ol>
 </nav>

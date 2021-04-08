@@ -22,9 +22,17 @@ Auth::routes();
 Route::get('/post-to-social/{token}', 'SocialPostController@post');
 Route::get('/comment-to-post/{token}', 'SocialPostController@comment');
 
-Route::resource('dashboard', 'DashboardController');
-Route::resource('subject', 'SubjectController');
-Route::resource('subject.question', 'QuestionController');
-// Setting
-Route::get('setting', 'SettingController@index')->name('setting.index');
-Route::post('setting', 'SettingController@update')->name('setting.update');
+Route::middleware('auth')->group(function () {
+    Route::resource('dashboard', 'DashboardController');
+
+    Route::resource('subject', 'SubjectController')->except([
+        'show'
+    ]);
+    Route::resource('subject.question', 'QuestionController')->except([
+        'show'
+    ]);
+
+    // Setting
+    Route::get('setting', 'SettingController@index')->name('setting.index');
+    Route::post('setting', 'SettingController@update')->name('setting.update');
+});
