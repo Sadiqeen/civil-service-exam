@@ -24,7 +24,7 @@ Route::get('/comment-to-post/{token}', 'SocialPostController@comment');
 
 Route::resource('dashboard', 'DashboardController');
 Route::resource('subject', 'SubjectController');
-Route::resource('question', 'QuestionController');
+Route::resource('subject.question', 'QuestionController');
 // Setting
 Route::get('setting', 'SettingController@index')->name('setting.index');
 Route::post('setting', 'SettingController@update')->name('setting.update');

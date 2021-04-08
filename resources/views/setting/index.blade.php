@@ -92,9 +92,8 @@
             </div>
 
 
-            <div class="form-group">
-                <a href="{{ route('question.index') }}" class="btn btn-secondary text-white">Back</a>
-                <button type="submit" class="btn btn-success float-right">Save</button>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
     </div>

@@ -21,9 +21,6 @@ class QuestionsDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('subject', function (Question $question) {
-                return $question->subject->name . ' ' . $question->subject->year;
-            })
             ->addColumn('action', 'question.action');
     }
 
@@ -35,7 +32,7 @@ class QuestionsDataTable extends DataTable
      */
     public function query(Question $model)
     {
-        return $model->newQuery();
+        return $model->where('subject_id', $this->id)->newQuery();
     }
 
     /**
@@ -56,7 +53,7 @@ class QuestionsDataTable extends DataTable
             )
             ->orderBy(0)
             ->buttons(
-                Button::make('create'),
+                Button::make("create"),
                 Button::make('reload')
             );
     }
@@ -69,11 +66,13 @@ class QuestionsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('question'),
-            Column::make('subject'),
+            Column::make('question')->title('คำถาม'),
             Column::computed('action')
+                ->title('#')
                 ->exportable(false)
                 ->printable(false)
+                ->searchable(false)
+                ->orderable(false)
                 ->width(60)
                 ->addClass('text-center'),
         ];

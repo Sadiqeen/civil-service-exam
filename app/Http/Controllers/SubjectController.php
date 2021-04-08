@@ -51,7 +51,11 @@ class SubjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $subject = Subject::with('question')->findOrFail($id);
+        // dd($subject->toArray());
+        return view('subject.show', [
+            'subject' => $subject
+        ]);
     }
 
     /**

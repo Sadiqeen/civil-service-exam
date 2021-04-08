@@ -15,9 +15,12 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(QuestionsDataTable $dataTable)
+    public function index(Subject $subject, QuestionsDataTable $dataTable)
     {
-        return $dataTable->render('question.index');
+        // dd($subject->toArray());
+        return $dataTable->with('id', $subject->id)->render('question.index', [
+            'subject' => $subject
+        ]);
     }
 
     /**
@@ -25,12 +28,10 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Subject $subject)
     {
-        $subjects = Subject::all();
-
         return view('question.create', [
-            'subjects' => $subjects
+            'subject' => $subject
         ]);
     }
 
@@ -40,11 +41,11 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreQuestion $request, Question $question)
+    public function store(StoreQuestion $request, Subject $subject, Question $question)
     {
         $question = Question::create([
             'question' => $request->question,
-            'subject_id' => $request->subject,
+            'subject_id' => $subject->id,
         ]);
 
 
@@ -69,7 +70,7 @@ class QuestionController extends Controller
         ]);
 
         toast('Add new question success', 'success');
-        return redirect()->route('question.index');
+        return redirect()->route('subject.question.index', $subject);
     }
 
     /**
@@ -89,14 +90,13 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Subject $subject, $id)
     {
         $question = Question::with('answer')->findOrFail($id);
-        $subjects = Subject::all();
 
         return view('question.edit', [
             'question_store' => $question,
-            'subjects' => $subjects
+            'subject' => $subject
         ]);
     }
 
@@ -107,11 +107,10 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Subject $subject, Question $question)
     {
-        $question = Question::findOrFail($id);
         $question->question = $request->question;
-        $question->subject_id = $request->subject;
+        $question->subject_id = $subject->id;
         $question->save();
 
         $question->answer()->delete();
@@ -137,7 +136,7 @@ class QuestionController extends Controller
         ]);
 
         toast('Update question success', 'success');
-        return redirect()->route('question.index');
+        return redirect()->route('subject.question.index', $subject);
     }
 
     /**
@@ -146,12 +145,11 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Subject $subject, Question $question)
     {
-        $question = Question::findOrFail($id);
         $question->delete();
 
         toast('Delete question success', 'success');
-        return redirect()->route('question.index');
+        return redirect()->route('subject.question.index', $subject);
     }
 }

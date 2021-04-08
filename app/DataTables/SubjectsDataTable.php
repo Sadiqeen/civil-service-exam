@@ -67,11 +67,13 @@ class SubjectsDataTable extends DataTable
     {
         return [
 
-            Column::make('name'),
-            Column::make('year'),
+            Column::make('name')->title('ชื่อวิชา'),
             Column::computed('action')
+                ->title('#')
                 ->exportable(false)
                 ->printable(false)
+                ->searchable(false)
+                ->orderable(false)
                 ->width(60)
                 ->addClass('text-center'),
         ];

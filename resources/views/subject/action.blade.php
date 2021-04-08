@@ -1,5 +1,5 @@
 <div class="d-flex">
-    <a href="{{ route('subject.show', $id) }}">
+    <a href="{{ route('subject.question.index', $id) }}">
         <i class="fas fa-eye mr-3" data-toggle="tooltip" data-placement="top" title="View {{ $name }}"></i>
     </a>
     <a href="{{ route('subject.edit', $id) }}">

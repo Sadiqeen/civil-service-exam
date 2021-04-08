@@ -30,7 +30,6 @@ class StoreQuestion extends FormRequest
             'choice_3' => 'required|max:255',
             'choice_4' => 'required|max:255',
             'correct' => 'required|max:255',
-            'subject' => 'required|exists:subjects,id|max:255',
         ];
     }
 }

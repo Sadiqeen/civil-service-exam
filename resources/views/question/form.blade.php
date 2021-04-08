@@ -1,28 +1,4 @@
 @php
-$subject = '';
-if (old('subject')) {
-$subject = old('subject');
-} elseif (isset($question_store)) {
-$subject = $question_store->subject_id;
-}
-@endphp
-<div class="form-group">
-    <label for="">Subject</label>
-
-    <select name="subject" id="" class="form-control @error('subject') is-invalid @enderror" >
-        @foreach ($subjects as $item)
-        <option value="{{ $item->id }}" {{ $item->id === $subject ? "selected" : "" }}>{{ $item->name }} ({{ $item->year }})</option>
-        @endforeach
-    </select>
-    @error('subject')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-    @enderror
-</div>
-
-
-@php
 $question = '';
 if (old('question')) {
 $question = old('question');

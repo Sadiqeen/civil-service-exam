@@ -104,12 +104,12 @@
                                                 <span class="d-block"><i
                                                         class="fas fa-book mr-3"></i>Subjects</span></a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{ request()->routeIs('question.*') ? 'active' : '' }}"
-                                                href="{{ route('question.index') }}">
+                                        {{-- <li class="nav-item">
+                                            <a class="nav-link {{ request()->routeIs('subject.question.*') ? 'active' : '' }}"
+                                                href="{{ route('subject.question.index') }}">
                                                 <span class="d-block"><i
                                                         class="fas fa-question-circle mr-3 "></i>Questions</span></a>
-                                        </li>
+                                        </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link {{ request()->routeIs('setting.*') ? 'active' : '' }}"
                                                 href="{{ route('setting.index') }}"><span class="d-block">

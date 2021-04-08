@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
+        <li class="breadcrumb-item"><a href="{{ route('subject.index') }}">Subject</a></li>
+    </ol>
+</nav>
+
 {{$dataTable->table()}}
 
 <form id="delete-subject" action="" method="POST" class="d-none">
