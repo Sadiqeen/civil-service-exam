@@ -51,7 +51,7 @@ class SubjectsDataTable extends DataTable
                     "<'row'<'col-sm-12'tr>>" .
                     "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>"
             )
-            ->orderBy(1)
+            ->orderBy(0)
             ->buttons(
                 Button::make('create'),
                 Button::make('reload')
