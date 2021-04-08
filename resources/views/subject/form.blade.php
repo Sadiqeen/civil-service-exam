@@ -7,7 +7,7 @@ $name = $subject->name;
 }
 @endphp
 <div class="form-group">
-    <label for="">Name</label>
+    <label for="">ชื่อวิชา</label>
     <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ $name ?? '' }}" name="name"
         id="name" placeholder="">
     @error('name')
@@ -26,7 +26,7 @@ $year = $subject->year;
 }
 @endphp
 <div class="form-group">
-    <label for="">Year</label>
+    <label for="">ปี</label>
     <input type="text" class="form-control @error('year') is-invalid @enderror" value="{{ $year ?? '' }}" name="year"
         id="year" placeholder="">
     @error('year')

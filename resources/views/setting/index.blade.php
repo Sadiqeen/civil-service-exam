@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <h1>Setting</h1>
+        <h1>ตั้งค่า</h1>
         <form action="{{ route('setting.update') }}" method="post">
             @csrf
 
@@ -93,7 +93,7 @@
 
 
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">บันทึก</button>
             </div>
         </form>
     </div>

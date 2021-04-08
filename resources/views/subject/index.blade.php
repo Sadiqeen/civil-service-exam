@@ -4,7 +4,7 @@
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
-        <li class="breadcrumb-item"><a href="{{ route('subject.index') }}">Subject</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('subject.index') }}">รายวิชา</a></li>
     </ol>
 </nav>
 

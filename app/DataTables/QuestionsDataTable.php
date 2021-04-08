@@ -53,8 +53,8 @@ class QuestionsDataTable extends DataTable
             )
             ->orderBy(0)
             ->buttons(
-                Button::make("create"),
-                Button::make('reload')
+                Button::make("create")->text('เพิ่ม'),
+                Button::make('reload')->text('โหลดซ้ำ')
             );
     }
 

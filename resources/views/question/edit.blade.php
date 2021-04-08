@@ -5,10 +5,10 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-text-light breadcrumb-primary text-white">
-            <li class="breadcrumb-item"><a href="{{ route('subject.index') }}">Subject</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('subject.index') }}">รายวิชา</a></li>
             <li class="breadcrumb-item"><a href="{{ route('subject.question.index', $subject) }}">{{ $subject->name }}</a></li>
             <li class="breadcrumb-item"><a href="javascript:void(0)">{{ $question_store->question }}</a></li>
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Edit</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">แก้ไข</a></li>
         </ol>
     </nav>
 
@@ -21,8 +21,8 @@
             @include('question.form')
 
             <div class="form-group">
-                <a href="{{ route('subject.question.index', $subject) }}" class="btn btn-secondary text-white">Back</a>
-                <button type="submit" class="btn btn-success float-right">Save</button>
+                <a href="{{ route('subject.question.index', $subject) }}" class="btn btn-secondary text-white">กลับ</a>
+                <button type="submit" class="btn btn-success float-right">บันทึก</button>
             </div>
         </form>
     </div>

@@ -60,7 +60,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        ออกจากระบบ
                                     </a></li>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -96,13 +96,13 @@
                                             <a class="nav-link {{ request()->routeIs('dashboard.*') ? 'active' : '' }}"
                                                 href="{{ route('dashboard.index') }}">
                                                 <span class="d-block"><i
-                                                        class="fas fa-tachometer-alt mr-3"></i>Home</span></a>
+                                                        class="fas fa-tachometer-alt mr-3"></i>หน้าแรก</span></a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link {{ request()->routeIs('subject.*') ? 'active' : '' }}"
                                                 href="{{ route('subject.index') }}">
                                                 <span class="d-block"><i
-                                                        class="fas fa-book mr-3"></i>Subjects</span></a>
+                                                        class="fas fa-book mr-3"></i>รายวิชา</span></a>
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link {{ request()->routeIs('subject.question.*') ? 'active' : '' }}"
@@ -113,7 +113,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link {{ request()->routeIs('setting.*') ? 'active' : '' }}"
                                                 href="{{ route('setting.index') }}"><span class="d-block">
-                                                <i class="fas fa-cog"></i> Setting</span></a>
+                                                <i class="fas fa-cog mr-3"></i>ตั้งค่า</span></a>
                                         </li>
                                     </ul>
                                 </div>
