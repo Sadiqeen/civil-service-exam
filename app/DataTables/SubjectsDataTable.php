@@ -53,7 +53,7 @@ class SubjectsDataTable extends DataTable
             )
             ->orderBy(0)
             ->buttons(
-                Button::make("create")->text('เพิ่ม'),
+                Button::make("create")->text('<i class="fas fa-plus mr-2"></i> เพิ่ม'),
                 Button::make('reload')->text('โหลดซ้ำ')
             );
     }
@@ -69,7 +69,7 @@ class SubjectsDataTable extends DataTable
 
             Column::make('name')->title('ชื่อวิชา'),
             Column::computed('action')
-                ->title('#')
+                ->title('###')
                 ->exportable(false)
                 ->printable(false)
                 ->searchable(false)

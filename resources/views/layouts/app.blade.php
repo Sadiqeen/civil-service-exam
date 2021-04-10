@@ -43,11 +43,11 @@
                     <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-auto">
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">ลงทะเบียน</a>
                         </li>
                         @endif
                         @else

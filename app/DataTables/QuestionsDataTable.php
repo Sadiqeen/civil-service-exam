@@ -53,7 +53,7 @@ class QuestionsDataTable extends DataTable
             )
             ->orderBy(0)
             ->buttons(
-                Button::make("create")->text('เพิ่ม'),
+                Button::make("create")->text('<i class="fas fa-plus mr-2"></i> เพิ่ม'),
                 Button::make('reload')->text('โหลดซ้ำ')
             );
     }
@@ -68,7 +68,7 @@ class QuestionsDataTable extends DataTable
         return [
             Column::make('question')->title('คำถาม'),
             Column::computed('action')
-                ->title('#')
+                ->title('###')
                 ->exportable(false)
                 ->printable(false)
                 ->searchable(false)

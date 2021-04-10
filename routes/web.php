@@ -13,14 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* ----------------------------- Authentication ----------------------------- */
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/post-to-social/{token}', 'SocialPostController@post');
-Route::get('/comment-to-post/{token}', 'SocialPostController@comment');
+/* ---------------------------------- Guest --------------------------------- */
+
+Route::get('/', 'Guest\HomeController@home');
+
+/* ---------------------------------- Auth ---------------------------------- */
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -36,3 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::get('setting', 'SettingController@index')->name('setting.index');
     Route::post('setting', 'SettingController@update')->name('setting.update');
 });
+
+/* --------------------------------- CRONJOB -------------------------------- */
+
+Route::get('/post-to-social/{token}', 'SocialPostController@post');
+Route::get('/comment-to-post/{token}', 'SocialPostController@comment');
