@@ -66,6 +66,17 @@ class SocialPostController extends Controller
 ';
         }
 
+        $message .= '----------------------' . '
+';
+        $message .= 'เฉลยพรุ่งนี้ในคอมเมนต์' . '
+';
+        $message .= '----------------------' . '
+';
+        $message .= 'มาร่วมแชร์ข้อสอบกันได้ที่ลิ้งนี้เลย' . '
+';
+        $message .= 'https://korpor.teccommand.com/' . '
+';
+
         return $message;
     }
 }

@@ -10,10 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -98,22 +94,30 @@
                                                 <span class="d-block"><i
                                                         class="fas fa-tachometer-alt mr-3"></i>หน้าแรก</span></a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item position-relative">
                                             <a class="nav-link {{ request()->routeIs('subject.*') ? 'active' : '' }}"
                                                 href="{{ route('subject.index') }}">
                                                 <span class="d-block"><i
-                                                        class="fas fa-book mr-3"></i>รายวิชา</span></a>
+                                                        class="fas fa-check-square mr-3"></i>อนุมัติคำถาม
+                                                    <span class="bg-danger text-white notification">{{ $notification['approval'] }}</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link {{ request()->routeIs('subject.*') ? 'active' : '' }}"
+                                                href="{{ route('subject.index') }}">
+                                                <span class="d-block"><i class="fas fa-book mr-3"></i>รายวิชา</span></a>
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link {{ request()->routeIs('subject.question.*') ? 'active' : '' }}"
-                                                href="{{ route('subject.question.index') }}">
-                                                <span class="d-block"><i
-                                                        class="fas fa-question-circle mr-3 "></i>Questions</span></a>
+                                        href="{{ route('subject.question.index') }}">
+                                        <span class="d-block"><i
+                                                class="fas fa-question-circle mr-3 "></i>Questions</span></a>
                                         </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link {{ request()->routeIs('setting.*') ? 'active' : '' }}"
                                                 href="{{ route('setting.index') }}"><span class="d-block">
-                                                <i class="fas fa-cog mr-3"></i>ตั้งค่า</span></a>
+                                                    <i class="fas fa-cog mr-3"></i>ตั้งค่า</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,12 +136,13 @@
             @endguest
         </main>
     </div>
-</body>
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
-@include('sweetalert::alert')
-@stack('script')
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}" defer></script>
+    @include('sweetalert::alert')
+    @stack('script')
+
+</body>
 
 </html>
